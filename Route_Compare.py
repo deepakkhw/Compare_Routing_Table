@@ -102,12 +102,12 @@ if __name__ == "__main__":
 
     with open("route_comparison_output.txt", "w") as f:
         if missing_results:
-            f.write("Missing Subnets in BGP routes relative to Static routes:\n")
+            f.write("Missing Subnets in current routing table relative to expected routes:\n")
             f.write(missing_table_str)
             f.write("\n\n")
         else:
-            f.write("All static routes are fully covered by BGP-learned routes.\n\n")
-        f.write("Full Differences Between Static and BGP Routes:\n")
+            f.write("All expected routes are fully covered by current routing table.\n\n")
+        f.write("Full Differences Between expected and current Routes:\n")
         f.write(diff_table_str)
 
     print("\nOutput saved to route_comparison_output.txt")
